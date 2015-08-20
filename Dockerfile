@@ -2,8 +2,8 @@ FROM centos
 MAINTAINER Robert Greathouse <robert.i.greathouse@gmail.com>
 
 #Set HTTP(S)_PROXY for update from behind Ferguson proxy
-ENV http_proxy http://rgreathouse:greathouse123@10.129.100.223:8080
-ENV https_proxy http://rgreathouse:greathouse123@10.129.100.223:8080
+ENV http_proxy http://$PROXY_LOGIN:$PROXY_PASSWORD@$PROXY_IP:$PROXY_PORT
+ENV https_proxy http://$PROXY_LOGIN:$PROXY_PASSWORD@$PROXY_IP:$PROXY_PORT
 
 #Update OS
 RUN yum -y update
